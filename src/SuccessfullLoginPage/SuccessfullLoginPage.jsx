@@ -9,6 +9,7 @@ const SuccessfulLoginPage = ({ userData }) => {
     const handleLogoutClick = async () => {
         await axios.get('https://up-time-down-time.vercel.app/api/v1/auth/logout').then(() => {
             console.log('logged out');
+            navigateTo('/');
         }).catch((err) => {
             console.log('unable to logout', err);
         })
